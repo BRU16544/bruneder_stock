@@ -1,0 +1,16 @@
+
+CREATE OR REPLACE PROCEDURE 
+PROC_NEW_CUSTOMER (CUSTOMER_ID OUT NUMBER,
+                   Email IN Varchar2,
+                   Firstname IN Varchar2,
+                   Lastname IN Varchar2,
+                   Gender IN Varchar2,
+                   Birthdate IN Date,
+                   Credits IN OUT NUMBER) IS
+BEGIN
+  CUSTOMER_ID := SEQ_CUSTOMER_ID.nextval;
+  If CREDITS is NULL THEN
+    CREDITS := 10;
+  END IF;
+  
+END PROC_NEW_CUSTOMER;
